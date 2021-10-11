@@ -8,6 +8,7 @@ app.use(
   createProxyMiddleware({
     target: "https://cvp1.moph.go.th",
     changeOrigin: true,
+    secure: false,
   })
 );
 app.listen(5000);
