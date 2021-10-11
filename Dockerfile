@@ -1,4 +1,4 @@
-FROM node:14
+FROM node:14-alpine
 
 # Create app directory
 WORKDIR /usr/src/app
@@ -16,6 +16,7 @@ RUN npm install
 # Bundle app source
 COPY . .
 
-EXPOSE 3000
+ENV PORT 80
+EXPOSE $PORT
 
 CMD ["pm2-runtime", "ecosystem.config.js"]
